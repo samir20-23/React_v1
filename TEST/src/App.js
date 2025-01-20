@@ -1,33 +1,21 @@
-import React from 'react';
-import ReactDom from 'react-dom/client';
-import reportWebVitals from './'
-import logo from './img.svg';
-import './App.css';
-import './index.css';
+import React , {useState} from 'react';
+import Button from './Button';
 
 function App() {
+ var [variable,setVariable] = useState('');
+  // دالة يتم استدعاؤها عند النقر على الزر
+ 
+  var click = ()=> {
+    setVariable('samir aoulad amar');
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" /> {/* Fixed typo here */}
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  <div>
+    <h1>button clicked</h1>
+    <Button onClick={click}/>{}
+    <p>{variable}</p>{}
+  </div>
   );
 }
 
-function Start() {
-  return <h1>Hello</h1>;
-}
-
-export { Start, App }; // Named exports
+export default App;
